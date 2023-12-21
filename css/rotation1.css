@@ -1,0 +1,10 @@
+.img-btn {
+    position: relative;
+    z-index: 100;
+    width: 200px;
+}
+.arrow {
+    width: 100px;
+    z-index: 1000;
+    position: relative;
+}

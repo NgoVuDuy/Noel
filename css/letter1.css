@@ -1,0 +1,106 @@
+body {
+    background: url(../img/background2.png) ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.centered {
+    text-align: center;
+    position: relative;
+}
+textarea, p, form {
+    border: none;
+    overflow-wrap: break-word;
+    resize: none;
+}
+
+textarea:focus,
+input:focus {
+    outline: none; /* Loại bỏ outline */
+    border: 1px solid transparent; /* Loại bỏ border */
+}
+textarea {
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+}
+input {
+    border: none;
+    padding: 4px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    margin-right: 14px;
+}
+.btn {
+
+    width: 200px;
+}
+a {
+    display: flex;
+    justify-content: center;
+}
+form {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1030;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+    gap: 40px;
+    background-color: #7395c6;
+    /* margin-top: 100px; */
+    padding: 20px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-school {
+    width: 220px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 4px;
+}
+.form-way-send {
+    width: 100px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 4px;
+}
+.form-class {
+    width: 50px;
+}
+/* .block1 input{
+    color: white;
+}
+.block1 input::placeholder{
+    color: white;
+} */
+.block2 input::placeholder {
+    
+}
+label {
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+}
+.btn-sm {
+    background: #fcd24f;
+    font-weight: bold;
+    border-radius: 48px;
+    padding: 8px;
+    WIDTH: 30%;
+    /* text-align: center; */
+    font-size: 18px;
+}
+hr {
+    z-index: 1000;
+    margin: 0px;
+}
+main {
+    display: none;
+}

@@ -1,0 +1,37 @@
+@media  (max-width: 540px) {
+
+
+    .title {
+        width: 80%;
+        margin-bottom: 80px;
+    }
+    .santa {
+        width: 60%;
+    }
+    .container {
+        gap: 20px;
+    }
+
+}
+@media (min-width: 541px) and (max-width: 920px) {
+
+
+    .title {
+        width: 60%;
+    }
+    .santa {
+        width: 40%;
+    }
+    .container {
+        gap: 20px;
+    }
+
+}
+@media  (min-width: 1200px) {
+    .title {
+       width: 35%;
+    }
+    .santa {
+        width: 16%;
+    }
+}

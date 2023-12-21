@@ -1,0 +1,48 @@
+body {
+    position: absolute;
+    margin: 0px;
+    bottom: 0;
+    background: url(../img/background1.png) ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    width: 40%;
+    animation: change-title .3s forwards;
+}
+.santa {
+    width: 20%;
+    animation: change-santa .6s forwards;
+}
+.btn {
+    width: 200px;
+}
+@keyframes change-title {
+    from {
+        transform: scale(10);
+    } 
+    to {
+        transform: scale(1.0);
+    }
+}
+@keyframes change-santa {
+    0% {
+        transform: scale(1.4);
+    } 
+    33% {
+        transform: scale(1.0);
+    }
+    66% {
+        transform: scale(1.04);
+    }
+    99% {
+        transform: scale(1.0);
+    }
+}

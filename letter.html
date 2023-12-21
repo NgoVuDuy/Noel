@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/letter1.css">
+    <link rel="stylesheet" href="vongquay/style1.css">
+</head>
+<body>
+    <main id= "main">
+        <section class="main">
+            <span>
+                <img src="img/arrow.png" alt="" width="6%">
+                <ul class="wheel"></ul>
+            </span>
+            <img src="img/start-btn.png" alt="" class="btn--wheel" width="200px">
+        </section>
+        <h1 class="msg"></h1>
+    </main>
+    <div class="form-container">
+        <img src="img/merry-chris.png" alt="" width="40%">
+        <form class="form-letter" action="xuly.php" method="post">
+            <div class="block1">
+                <label for="">Tên bạn là gì áaa</label>
+                <input type="text" name="name-send" placeholder="Người gửi">
+                <label for="">Bạn học lớp nàoo</label>
+                <input type="text" name="class-send" placeholder="Lớp" class="form-class">
+                <select name="school-send" id="" class="form-school">
+                    <option value="THPT NGUYỄN ĐÌNH CHIỂU">THPT NGUYỄN ĐÌNH CHIỂU</option>
+                    <option value="THPT CHUYÊN TIỀN GIANG">THPT CHUYÊN TIỀN GIANG</option>
+                    <option value="THPT TRẦN HƯNG ĐẠO">THPT TRẦN HƯNG ĐẠO</option>
+                    <option value="">TRƯỜNG KHÁC</option>
+                </select><br>
+                <input type="text" name="phone-send" placeholder="SĐT/Fb">
+            </div>
+            <hr>
+            <div class="block2">
+                <input type="text" name="name-receive" placeholder="Người nhận">
+                <input type="text" name="class-receive" placeholder="Lớp"  class="form-class">
+                <select name="school-receive" id="" class="form-school">
+                    <option value="THPT NGUYỄN ĐÌNH CHIỂU">THPT NGUYỄN ĐÌNH CHIỂU</option>
+                    <option value="THPT CHUYÊN TIỀN GIANG">THPT CHUYÊN TIỀN GIANG</option>
+                    <option value="THPT TRẦN HƯNG ĐẠO">THPT TRẦN HƯNG ĐẠO</option>
+                    <option value="">TRƯỜNG KHÁC</option>
+                </select><br>
+                <label for="">Cách nhận</label>
+                <select name="way-send" id="" class="form-way-send">
+                    <option value="mess">mess</option>
+                    <option value="tructiep">Trực tiếp(chỉ áp dụng cho Nguyễn Đình Chiểu, các trường còn lại trong th.phố Mỹ Tho thì hên xui :>>)</option>
+                </select>
+                <br><input type="text" name="phone-receive" placeholder="SĐT/Fb">
+            </div>
+            <hr>
+            <div class="block3">
+                <textarea name="nd" placeholder="Tin nhắn ở đây"></textarea>
+            </div>
+            <center>
+                <button type="submit" value="" class="btn-sm">START</button>
+            </center>
+        </form>
+
+    </div>
+    <script src="./js/letter1.js"></script>
+    <script src="vongquay/main1.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
