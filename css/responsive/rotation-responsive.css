@@ -1,0 +1,22 @@
+@media  (max-width: 540px) {
+    :root {
+	    --size-wheel: 20rem;
+
+    }
+    span {
+        margin-top: 80px;
+    }
+    div:where(.swal2-container) div:where(.swal2-popup) {
+        width: 20em !important;
+    }
+
+}
+@media (min-width: 541px) and (max-width: 920px) {
+
+
+
+
+}
+@media  (min-width: 1200px) {
+
+}

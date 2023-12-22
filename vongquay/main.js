@@ -9,22 +9,26 @@
 	const showMsg = $('.msg');
 
 	//=====< Danh sách phần thưởng >=====
-	const listGift = [
+	let listGift = [
 		{
+			id: 1,
 			text: 'Móc khóa',
-			percent: 0 / 100,
+			percent: 20 / 100,
 		},
 		{
+			id: 2,
 			text: 'Quà bí mật',
-			percent: 100 / 100,
+			percent: 60 / 100,
 		},
 		{
+			id: 3,
 			text: 'Son dưỡng',
-			percent: 0 / 100,
+			percent: 10 / 100,
 		},
 		{
+			id: 4,
 			text: 'Gấu bông',
-			percent: 0 / 100,
+			percent: 10 / 100,
 		}
 	];
 
@@ -37,7 +41,7 @@
 	//=====< Số đo góc cần để tạo độ nghiêng, 90 độ trừ đi góc của 1 phần thưởng chiếm >=====
 	const skewY = 90 - rotate;
 	// Giá trị khởi tạo đưa lên local 
-	let gift_1
+	// let gift_1
 
 	listGift.map((item, index) => {
 		//=====< Tạo thẻ li >=====
@@ -83,7 +87,7 @@
 			currentRotate - index * rotate - rotate / 2
 		}deg)`;
 	};
-
+	
 	/********** Hàm lấy phần thưởng **********/
 	const getGift = randomNumber => {
 		let currentPercent = 0;
@@ -106,8 +110,6 @@
 	/********** In phần thưởng ra màn hình **********/
 	const btn = document.querySelector(".btn-sm")
 
-	const seletion = document.querySelector(".form-way-send")
-
 	const form = document.querySelector(".form-container")
 
 	const formLetter = document.querySelector(".form-container .form-letter")
@@ -118,20 +120,33 @@
 
 	// lấy các thẻ input
 	const inputs = document.querySelectorAll("input")
+	console.log(inputs)
 	// lấy các thẻ seletion
-	const seletions = document.querySelectorAll("seletion")
+	// const seletions = document.querySelectorAll("seletion")
 	// lấy thẻ textarea 
 	const textarea = document.querySelectorAll("textarea")
+	
+	const html = document.querySelector("html")
 
+	var radioButtons = document.getElementsByName('way');
 
-
-
+	console.log(radioButtons)
+	
 	btn.addEventListener('click', function(event) {
 		
-		if(seletion.value == "tructiep") {
+		var selectedSchool = "";
+	
+		for (var i = 0; i < radioButtons.length; i++) {
+			if (radioButtons[i].checked) {
+				selectedSchool = radioButtons[i].value;
+				break;
+			}
+		}
+		if(selectedSchool == "tructiep") {
 			event.preventDefault()
 			form.style.display = "none"
 			main.style.display = "block"
+			html.style.overflow = "hidden"
 			// window.location.href = "vongquay/rotation.html"
 		}
 	})
@@ -157,7 +172,7 @@
 				formLetter.appendChild(newInput);
 				formLetter.submit();
 				//window.location.reload()
-				console.log(newInput.value)
+				//console.log(listGift)
 				}
 			})
 
@@ -169,4 +184,112 @@
 	btnWheel.addEventListener('click', () => {
 		!isRotating && start();
 	});
+	// function getGiftSever() {
+		
+	// 	let arrGift = []
+	
+	// 	fetch('http://localhost/WebNoel/getGift.php')
+	// 	  .then(response => response.json())
+	// 	  .then(data => {
+	// 		// Duyệt qua mỗi đối tượng trong mảng
+	// 		data.forEach(gift => {
+	// 		  // Lấy thông tin từ mỗi đối tượng
+	// 		  arrGift.push(gift)
+	// 		});
+	// 	}).catch(error => console.error('Error:', error));
+	// 	return arrGift
+	// }
+	// console.log(getGiftSever())
+	// getGiftSever().forEach((item) => {
+		// 	// Nếu mảng có gấu bông
+		// 	console.log(item)
+		// 	if(item.TrungThuong == 'Gấu bông') {
+			// 		// Đặt tỉ lệ trúng bằng 0
+			// 		listGift[3].percent = 0;
+			// 		// Tăng tỉ lệ quà bí mật
+			// 		listGift[1].percent += 0.1
+			// 	}
+			// 	// Nếu mảng có son dưỡng
+			// 	if(item.TrungThuong == 'Son dưỡng') {
+				// 		// Đặt tỉ lệ trúng bằng 0
+				// 		listGift[2].percent = 0
+				// 		// Tăng tỉ lệ quà bí mật
+				// 		listGift[1].percent += 0.1
+				// 	}
+				// 	// Nếu mãng đã có 20 móc khóa
+	// 	if(!checkMk()) {
+	// 		// Đặt tỉ lệ trúng về 0
+	// 		listGift[0].percent = 0
+	// 		// Tăng tỉ lệ trúng quà bí mật
+	// 		listGift[1].percent += 0.2
+	// 	}
+	// })
+	
+	async function checkMk() {
+		let countMK = 0;
+		const gifts = await getGiftSever();
+	
+		for (const item of gifts) {
+			if (item.TrungThuong == 'Gấu bông') {
+				countMK++;
+				if (countMK === 20) {
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
+	async function getGiftSever() {
+		try {
+			const response = await fetch('http://localhost/WebNoel/getGift.php');
+			const data = await response.json();
+			
+			let arrGift = [];
+			data.forEach(gift => {
+				arrGift.push(gift);
+			});
+			
+			return arrGift;
+		} catch (error) {
+			console.error('Error:', error);
+			return [];
+		}
+	}
+	
+	async function processGiftData() {
+		const gifts = await getGiftSever();
+	
+		gifts.forEach(item => {
+			// Nếu mảng có gấu bông
+			console.log(item);
+			if (item.TrungThuong == 'Gấu bông') {
+				// Đặt tỉ lệ trúng bằng 0
+				listGift[3].percent = 0;
+				// Tăng tỉ lệ quà bí mật
+				listGift[1].percent += 0.1;
+			}
+			// Nếu mảng có son dưỡng
+			if (item.TrungThuong == 'Son dưỡng') {
+				// Đặt tỉ lệ trúng bằng 0
+				listGift[2].percent = 0;
+				// Tăng tỉ lệ quà bí mật
+				listGift[1].percent += 0.1;
+			}
+			// Nếu mãng đã có 20 móc khóa
+			if (!checkMk()) {
+				// Đặt tỉ lệ trúng về 0
+				listGift[0].percent = 0;
+				// Tăng tỉ lệ trúng quà bí mật
+				listGift[1].percent += 0.2;
+			}
+		});
+	}
+	
+	processGiftData();
+	console.log(listGift)
+	  
 })();
+
+

@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/letter1.css">
+    <link rel="stylesheet" href="css/letter2.css">
     <link rel="stylesheet" href="vongquay/style1.css">
+    <link rel="stylesheet" href="css/responsive/letter-responsive.css">
+    <link rel="stylesheet" href="css/responsive/rotation-responsive.css">
 </head>
 <body>
     <main id= "main">
         <section class="main">
             <span>
-                <img src="img/arrow.png" alt="" width="6%">
+                <img src="img/arrow.png" alt="" class="arrow-letter">
                 <ul class="wheel"></ul>
             </span>
             <img src="img/start-btn.png" alt="" class="btn--wheel" width="200px">
@@ -19,37 +21,87 @@
         <h1 class="msg"></h1>
     </main>
     <div class="form-container">
-        <img src="img/merry-chris.png" alt="" width="40%">
         <form class="form-letter" action="xuly.php" method="post">
-            <div class="block1">
+            <center>
+                <img src="img/merry-chris.png" alt="" width="60%" class="title-img-letter">
+            </center>
+            <div class="block1 block">
                 <label for="">Tên bạn là gì áaa</label>
-                <input type="text" name="name-send" placeholder="Người gửi">
+                <input type="text" name="name-send" placeholder=""><hr>
                 <label for="">Bạn học lớp nàoo</label>
-                <input type="text" name="class-send" placeholder="Lớp" class="form-class">
-                <select name="school-send" id="" class="form-school">
+                <input type="text" name="class-send" placeholder="" class="form-class"><hr>
+                <label for="">Bạn học trường nàoo</label>
+                <!-- <select name="school-send" id="" class="form-school">
                     <option value="THPT NGUYỄN ĐÌNH CHIỂU">THPT NGUYỄN ĐÌNH CHIỂU</option>
                     <option value="THPT CHUYÊN TIỀN GIANG">THPT CHUYÊN TIỀN GIANG</option>
                     <option value="THPT TRẦN HƯNG ĐẠO">THPT TRẦN HƯNG ĐẠO</option>
                     <option value="">TRƯỜNG KHÁC</option>
-                </select><br>
-                <input type="text" name="phone-send" placeholder="SĐT/Fb">
+                </select> -->
+                <div class="radio-container">
+
+                    <input type="radio" id="" name="school-send" value="THPT NGUYỄN ĐÌNH CHIỂU">
+                    <label for="option1">THPT NGUYỄN ĐÌNH CHIỂU</label><br>
+                  
+                    <input type="radio" id="" name="school-send" value="THPT CHUYÊN TIỀN GIANG">
+                    <label for="option2">THPT CHUYÊN TIỀN GIANG</label><br>
+    
+                    <input type="radio" id="" name="school-send" value="THPT TRẦN HƯNG ĐẠO" >
+                    <label for="option3">THPT TRẦN HƯNG ĐẠO</label><br>
+
+                </div>
+                <input type="text" name="school-send-other" id="" placeholder="Trường khác"><hr>
+                
+                <label for="">SDT của bạn là gì á</label>
+                <input type="text" name="phone-send" placeholder=""><hr>
+
+                <label for="">FB của bạn là gì á</label>
+                <input type="text" name="fb-send" placeholder=""><hr>
             </div>
-            <hr>
-            <div class="block2">
-                <input type="text" name="name-receive" placeholder="Người nhận">
-                <input type="text" name="class-receive" placeholder="Lớp"  class="form-class">
-                <select name="school-receive" id="" class="form-school">
+            <div class="block2 block">
+                <label for="">Tên người bạn muốn gửi là gì áa</label>
+                <input type="text" name="name-receive" placeholder=""><hr>
+                <label for="">Bạn đó học lớp nào áa</label>
+                <input type="text" name="class-receive" placeholder=""  class="form-class"><hr>
+                <label for="">Bạn đó học trường nào vậy áa</label>
+                <!-- <select name="school-receive" id="" class="form-school">
                     <option value="THPT NGUYỄN ĐÌNH CHIỂU">THPT NGUYỄN ĐÌNH CHIỂU</option>
                     <option value="THPT CHUYÊN TIỀN GIANG">THPT CHUYÊN TIỀN GIANG</option>
                     <option value="THPT TRẦN HƯNG ĐẠO">THPT TRẦN HƯNG ĐẠO</option>
                     <option value="">TRƯỜNG KHÁC</option>
-                </select><br>
-                <label for="">Cách nhận</label>
-                <select name="way-send" id="" class="form-way-send">
+                </select><br> -->
+                <div class="radio-container">
+
+                    <input type="radio" id="" name="school-receive" value="THPT NGUYỄN ĐÌNH CHIỂU">
+                    <label for="option1">THPT NGUYỄN ĐÌNH CHIỂU</label><br>
+                  
+                    <input type="radio" id="" name="school-receive" value="THPT CHUYÊN TIỀN GIANG">
+                    <label for="option2">THfPT CHUYÊN TIỀN GIANG</label><br>
+    
+                    <input type="radio" id="" name="school-receive" value="THPT TRẦN HƯNG ĐẠO">
+                    <label for="option3">THPT TRẦN HƯNG ĐẠO</label><br>
+
+                    
+                </div>
+                <input type="text" name="school-receive-other" id="" placeholder="Trường khác"><hr>
+                <label for="">Số điện thoại bạn đó là gì áa</label>
+                <input type="text" name="phone-receive" placeholder=""><hr>
+
+                <label for="">FB của bạn là gì á</label>
+                <input type="text" name="fb-receive" placeholder=""><hr>
+
+                <label for="">Cách nhận thưuuuuuu</label>
+                <!-- <select name="way-send" id="" class="form-way-send">
                     <option value="mess">mess</option>
                     <option value="tructiep">Trực tiếp(chỉ áp dụng cho Nguyễn Đình Chiểu, các trường còn lại trong th.phố Mỹ Tho thì hên xui :>>)</option>
-                </select>
-                <br><input type="text" name="phone-receive" placeholder="SĐT/Fb">
+                </select> -->
+                <div class="radio-container">
+                    <input type="radio" id="" name="way" value="mess">
+                    <label for="option1">mess</label><br>
+                  
+                    <input type="radio" id="" name="way" value="tructiep">
+                    <label for="option2">Trực tiếp(chỉ áp dụng cho Nguyễn Đình Chiểu, các trường còn lại trong th.phố Mỹ Tho thì hên xui :>>)</label><br>
+
+                </div>
             </div>
             <hr>
             <div class="block3">
@@ -61,8 +113,8 @@
         </form>
 
     </div>
-    <script src="./js/letter1.js"></script>
-    <script src="vongquay/main1.js"></script>
+    <!-- <script src="./js/letter.js"></script> -->
+    <script src="vongquay/main.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
